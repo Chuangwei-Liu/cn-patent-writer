@@ -6,14 +6,26 @@
 
 ### 方式一：Claude Code Plugin Marketplace
 
+**前置步骤**（首次安装自定义 marketplace 需执行，仅需一次）：
+
+如果你的电脑未配置 GitHub SSH key，先让 Git 走 HTTPS：
+
+```bash
+git config --global url."https://github.com/".insteadOf git@github.com:
+```
+
+然后安装：
+
 ```text
 /plugin marketplace add Chuangwei-Liu/cn-patent-writer
 /plugin install cn-patent-writer@cn-patent-writer-marketplace
 ```
 
+> **常见问题**：执行 `/plugin marketplace add` 时若报 `SSH authentication failed`，说明 Git 默认走 SSH 协议但本机未配置 SSH key。运行上述 `git config` 命令后重试即可。
+
 ### 方式二：直接复制
 
-将 `.claude/skills/cn-patent-writer/SKILL.md` 复制到你项目的 `.claude/skills/` 目录下。
+将 `.claude/skills/cn-patent-writer/SKILL.md` 复制到 `~/.claude/skills/cn-patent-writer/` 目录下（全局）或项目根目录 `.claude/skills/cn-patent-writer/`（项目级）。
 
 ## 功能
 
