@@ -8,7 +8,7 @@
     {
       "name": "cn-patent-writer",
       "description": "中文发明专利撰写助手 — 生成符合CNIPA格式的完整发明专利申请",
-      "version": "1.0.0",
+      "version": "1.2.0",
       "source": "./"
     }
   ]
