@@ -1,0 +1,20 @@
+{
+  "name": "cn-patent-writer",
+  "version": "1.0.0",
+  "description": "中文发明专利撰写助手。帮助研发人员将技术方案转化为符合CNIPA格式的完整发明专利申请（权利要求书+说明书+摘要）。当用户要求写专利、写发明专利、撰写专利、专利申请时使用。",
+  "author": {
+    "name": "Chuangwei Liu"
+  },
+  "homepage": "https://github.com/Chuangwei-Liu/cn-patent-writer",
+  "repository": "https://github.com/Chuangwei-Liu/cn-patent-writer",
+  "license": "MIT",
+  "keywords": [
+    "patent",
+    "chinese-patent",
+    "invention-patent",
+    "cnipa",
+    "权利要求书",
+    "专利撰写"
+  ],
+  "skills": "./.claude/skills/"
+}
