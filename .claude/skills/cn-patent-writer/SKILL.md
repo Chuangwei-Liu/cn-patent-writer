@@ -64,22 +64,34 @@ N+3. 一种计算机程序产品，其特征在于，当所述计算机程序产
 
 背景技术
 [现有技术描述]
-[现有技术的缺陷和不足]
+[现有技术的缺陷和不足：逐条列出，每条对应一项有益效果]
 
 发明内容
-[要解决的技术问题]
-[技术方案：对应权利要求1的详细展开]
-[有益效果：列出3-5条]
+[要解决的技术问题：一句话概括]
+[技术方案：对应权利要求1的方法论描述。禁止出现具体公式、具体参数值、英文缩写]
+[有益效果：列出3-5条，每条与背景技术缺陷一一对应]
 
 附图说明
 图1是本发明实施例提供的[方法名称]的流程示意图；
-图2是本发明实施例提供的[装置名称]的模块结构示意图；
+图2是本发明实施例提供的[架构/模型]示意图；
+图3是本发明实施例提供的[装置名称]的模块结构示意图；
+图4...图N：[预测结果图、对比图、实验验证图等，至少覆盖4种类型]
 
 具体实施方式
-[对技术方案的详细说明，可包含公式、实施例、参数范围]
-[至少一个具体实施例]
+[对技术方案的详细说明，此处可包含公式、实施例、参数范围]
+[至少一个具体实施例，采用步骤一至步骤N的编号]
 [技术效果的对比说明]
 ```
+
+### 发明内容 vs 具体实施方式 的严格分离
+
+| | 发明内容 | 具体实施方式 |
+|---|---------|------------|
+| 可否包含公式 | ❌ 禁止 | ✅ 可以 |
+| 可否包含具体参数值 | ❌ 禁止 | ✅ 可以（"在一实施例中，取值为X"） |
+| 可否包含英文缩写 | ❌ 禁止 | ⚠️ 仅公式中允许必要数学符号 |
+| 语言风格 | 方法论描述 | 技术细节展开 |
+| 作用 | 确定保护范围 | 支撑权利要求 |
 
 ### 说明书摘要 (Abstract)
 
@@ -89,9 +101,35 @@ N+3. 一种计算机程序产品，其特征在于，当所述计算机程序产
 [可选：摘要附图说明]
 ```
 
+### 具体实施方式标准结构
+
+```
+步骤一：[名称]。 [详细描述，可含子步骤、公式、参数范围]。
+
+步骤二：[名称]。 [详细描述]。
+
+...
+
+步骤N：[名称]。 [详细描述]。
+
+[技术效果验证段落]
+
+实施例2
+参照图M，本实施例提供了一种[装置]，包括[模块列表]。各模块功能简述。
+
+实施例3
+本实施例提供了一种电子设备，包括至少一个存储器和至少一个处理器...
+
+实施例4
+本实施例提供了一种计算机可读存储介质...
+
+实施例5
+本实施例提供了一种计算机程序产品...
+```
+
 ## Writing Style Rules (MANDATORY)
 
-**Use these phrases throughout:**
+### 专利标准用语
 
 | 用途 | 表述 |
 |------|------|
@@ -108,6 +146,32 @@ N+3. 一种计算机程序产品，其特征在于，当所述计算机程序产
 - Academic paper language ("我们提出了", "本文", "研究表明")
 - Casual language ("很", "非常", "特别")
 - Vague claims without technical specificity
+
+### 英文和符号禁用规则 (MANDATORY)
+
+**权利要求书：零英文符号。** 全部变量和算法名称用中文描述：
+- σ²_data → "第一不确定性"或"数据固有噪声"
+- NSGA-II → "非支配排序遗传算法"
+- TOPSIS → "优劣解距离法"
+- I_f → "纤维综合指标"
+- FA/C, W/B → "粉煤灰与胶凝材料的质量比"、"水胶比"
+
+**说明书正文：仅公式块中允许必要数学符号。** 运行文字中禁止英文缩写。
+
+**发明内容：完全禁止英文。** 初次出现的术语必须给出中文全称。
+
+### 公式格式规则 (MANDATORY)
+
+- 所有公式**独立成行**，不杂糅在文字段落中
+- Word 输出用 OMML 格式，Markdown 输出用 `$$...$$` 块
+- 公式中的变量后跟中文说明
+- 禁止 `$...$` 行内公式
+
+### 灰度附图规则 (MANDATORY)
+
+- 所有附图为**黑白或灰度**，不使用彩色区分
+- 用**形状**（圆○、方■、三角▲）、**纹样**（斜线、十字纹、点纹）和**灰度深浅**区分不同模型或数据系列
+- 坐标轴标签、图例文字全部为中文
 
 ## Information Gathering
 
@@ -145,25 +209,40 @@ Write 权利要求书 before 说明书. Claims define the protection scope; the 
 ### Step 3: Description from Claims
 
 Expand each claim element into prose sections in the description:
-- Claim 1 → 技术方案 in 发明内容
-- Dependent claims → specific implementations in 具体实施方式
+- Claim 1 → 技术方案 in 发明内容 (method-level, no formulas)
+- Dependent claims → specific implementations in 具体实施方式 (can include formulas)
 - Benefits → 有益效果 (quantify where possible)
 
 ### Step 4: Abstract Last
 
 The abstract is a compressed version of claim 1 + key benefit. Write it last.
 
-## Common Mistakes (from baseline testing)
+## Common Mistakes
 
 | Mistake | Fix |
 |---------|-----|
 | Only method claims, no device/medium claims | ALWAYS add claims N+1, N+2, N+3 (device, storage medium, program product) |
-| Uncertainty described as "constraint" when it's an "optimization objective" | Match the paper's actual technical contribution |
-| Using generic descriptions ("纤维种类", "基体配合比") instead of specific features | Use specific technical terms from the provided material |
+| Formulas and specific values in 发明内容 | Move all formulas and values to 具体实施方式 |
+| English abbreviations in claims or 发明内容 | Replace ALL with Chinese descriptions |
+| Inline formulas in text ($...$) | Put ALL formulas on separate lines ($$...$$ or OMML) |
+| Color-dependent figures | Use grayscale with distinct shapes, hatch patterns, and line styles |
+| 附图说明 only lists flowcharts | Include 4+ figure types: flowchart, architecture, module, prediction result, comparison, experimental validation |
+| 发明内容残留英文缩写 (e.g., "FRCC") | Expand to full Chinese name on first occurrence |
+| 实施例2-5 missing headers | Add explicit 实施例 headers for each embodiment |
 | Academic writing style ("我们提出", "本文") | Replace with patent style ("本申请", "本发明") |
 | Too few claims (<10) | Aim for 10 claims minimum |
-| Missing boilerplate electronic device + storage medium claims | These are ALWAYS required for method patents |
 
-## Real-World Examples
+## Pre-Submission Checklist (MANDATORY)
 
-Reference patent structure (Chinese patent HPACN20251268): See the reference document at `Reference/基于物理信息神经网络的结构数值仿真与优化一体化方法/` for complete formatting, paragraph structure, and claim chain design.
+Before finalizing the patent document, verify ALL of the following:
+
+- [ ] 权利要求书全文零英文符号
+- [ ] 发明内容零公式、零具体参数值、零英文缩写
+- [ ] 附图说明列出全部图号及描述，数量与正文引用一致
+- [ ] 所有公式独立成行，无行内公式
+- [ ] 所有附图为黑白/灰度
+- [ ] 附图至少覆盖4种类型（流程图+架构图+模块图+结果图+对比图+验证图任选其四）
+- [ ] 背景技术缺陷条数 = 发明内容有益效果条数
+- [ ] 实施例2-5均有明确标题
+- [ ] 全文无"FRCC"等英文缩写（除公式块中必要数学符号）
+- [ ] 说明书附图区域列出的图号与正文引用完全一致
