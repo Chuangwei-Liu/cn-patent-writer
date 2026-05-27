@@ -1,6 +1,9 @@
 {
   "name": "cn-patent-writer-marketplace",
   "description": "Chuangwei Liu's patent writing tools",
+  "owner": {
+    "name": "Chuangwei Liu"
+  },
   "plugins": [
     {
       "name": "cn-patent-writer",
